@@ -1,3 +1,38 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "https://winsonwu.com/"
+languageCode = "en-us"
+title = "Winson Wu"
+theme = "PaperMod"
+
+[params]
+  author = "Winson Wu"
+  description = "Personal website of Winson Wu — Resume, Products, and AI Weekly."
+  showAuthor = true
+
+# Menus
+[menu]
+
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Resume"
+    url = "/resume/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Products"
+    url = "/products/"
+    weight = 3
+
+  [[menu.main]]
+    name = "AI Weekly"
+    url = "/weekly/"
+    weight = 4
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
