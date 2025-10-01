@@ -1,0 +1,20 @@
+[[main]]
+  name = "Home"
+  url = "/"
+  weight = 10
+
+[[main]]
+  name = "Resume"
+  url = "/resume/"
+  weight = 20
+
+[[main]]
+  name = "Products"
+  url = "/products/"
+  weight = 30
+
+[[main]]
+  name = "AI Weekly"
+  url = "/weekly/"
+  weight = 40
+
