@@ -1,6 +1,6 @@
 # WENSHENG (WINSON) WU
 **Full-Stack AI Engineer | Master of Artificial Intelligence (Candidate)**  
-📍 Christchurch, New Zealand |  ✉️ wensheng.wu@pg.canterbury.ac.nz  
+📍 Christchurch, New Zealand  |   ✉️ wensheng.wu@pg.canterbury.ac.nz  
 
 ---
 
