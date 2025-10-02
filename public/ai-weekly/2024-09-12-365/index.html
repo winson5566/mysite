@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>The Collapse of Traffic Monetization (Issue 365):  | Winson Wu</title>
+<meta name="keywords" content="">
+<meta name="description" content="Cover Image
+
+There is a convenience store in Shenzhen Haibei Bay, situated on a cliff and facing the sea, known online as the &ldquo;Most Beautiful Convenience Store in Shenzhen.&rdquo; (via)
+The Collapse of Traffic Monetization
+Last week, Cloudflare founder and CEO Matthew Prince gave an interview.
+
+He put forward a new idea: the era of &ldquo;traffic is king&rdquo; on the internet is coming to an end, and AI will terminate the traditional internet business model.">
+<meta name="author" content="Winson Wu">
+<link rel="canonical" href="http://localhost:1313/ai-weekly/2024-09-12-365/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a090830a421002426baafbd314e38f149d77b4c48a12ee9312700d770b27fb26.css" integrity="sha256-oJCDCkIQAkJrqvvTFOOPFJ13tMSKEu6TEnANdwsn&#43;yY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/ai-weekly/2024-09-12-365/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Winson Wu (Alt + H)">Winson Wu</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/ai-weekly/" title="AI Weekly">
+                    <span>AI Weekly</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/resume/" title="Resume">
+                    <span>Resume</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.ragie.org/" title="RAGB">
+                    <span>RAGB</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      The Collapse of Traffic Monetization (Issue 365): 
+    </h1>
+    <div class="post-meta"><span title='2024-09-12 00:00:00 +0000 UTC'>September 12, 2024</span>&nbsp;·&nbsp;<span>Winson Wu</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="cover-image">Cover Image<a hidden class="anchor" aria-hidden="true" href="#cover-image">#</a></h2>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091001.webp"></p>
+<p>There is a convenience store in Shenzhen Haibei Bay, situated on a cliff and facing the sea, known online as the &ldquo;Most Beautiful Convenience Store in Shenzhen.&rdquo; (<a href="https://www.nfnews.com/content/j3kdGR106A.html">via</a>)</p>
+<h2 id="the-collapse-of-traffic-monetization">The Collapse of Traffic Monetization<a hidden class="anchor" aria-hidden="true" href="#the-collapse-of-traffic-monetization">#</a></h2>
+<p>Last week, Cloudflare founder and CEO Matthew Prince gave an <a href="https://stratechery.com/2025/an-interview-with-cloudflare-founder-and-ceo-matthew-prince-about-internet-history-and-pay-per-crawl/">interview</a>.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091002.webp"></p>
+<p>He put forward a new idea: <strong>the era of &ldquo;traffic is king&rdquo; on the internet is coming to an end</strong>, and AI will terminate the traditional internet business model.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091109.webp"></p>
+<p>I found his explanation very comprehensive and convincing, as expected from an English and Law graduate. I have organized his points to share with everyone.</p>
+<ol>
+<li></li>
+</ol>
+<p>For the past 25 years, the internet&rsquo;s entry point has always been search. If you want something, you search for it.</p>
+<p>Google dominates search.</p>
+<p>For its own benefit, it has an incentive to promote the development of the internet. <strong>The more diverse and chaotic the internet is, the more advantageous it is for Google</strong>, because people will need search to deal with the messy information.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091003.webp"></p>
+<p>Therefore, Google has always incentivized people to create content for the internet. Only a continuous stream of content can enhance the value of search.</p>
+<ol start="2">
+<li></li>
+</ol>
+<p><strong>In return, it provides traffic to content producers</strong> and helps producers monetize that traffic (mainly by matching content with ads).</p>
+<p>It is no coincidence that Google is the world&rsquo;s largest search engine and also the world&rsquo;s largest advertiser.</p>
+<p>In fact, Google has been the internet&rsquo;s biggest sponsor for the past 25 years. Without a company like Google creating a traffic incentive mechanism that allows content producers to turn traffic into money, the internet would not be the thriving place it is today.</p>
+<ol start="3">
+<li></li>
+</ol>
+<p>The situation is changing now. <strong>The internet&rsquo;s entry point is shifting from a search engine to an answer engine.</strong></p>
+<p>In the past, Google gave you a treasure map, and you had to visit the links yourself to find the answer. Now, large models directly give you the answer, saving the treasure map.</p>
+<p>Even Google itself has a separate <a href="https://search.google/ways-to-search/ai-mode/">AI mode</a>, providing only the answer without the need to visit links.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091004.webp"></p>
+<p>This is indeed convenient for users, <strong>but it fails to generate traffic, and the entire traffic-based internet model begins to collapse.</strong></p>
+<ol start="4">
+<li></li>
+</ol>
+<p>Once there is no traffic, content producers lose their way to monetize. They can&rsquo;t make money, so they can only reduce or abandon content production.</p>
+<p>The human-produced content on the internet is already shrinking, and the root cause is that the traditional &ldquo;traffic monetization&rdquo; model is no longer working.</p>
+<p>There are two possibilities for the future. One is that large model companies and platform companies hire people themselves to produce content; the other is that they share a portion of their revenue with content producers in exchange for the latter providing content to them.</p>
+<p>Regardless of the possibility, it means that the form of the internet we are familiar with will cease to exist.</p>
+<h2 id="technology-trends">Technology Trends<a hidden class="anchor" aria-hidden="true" href="#technology-trends">#</a></h2>
+<ol>
+<li>A <a href="https://www.nibzard.com/berghain/">mysterious billboard</a> appeared on a street in San Francisco, showing only five numbers with no explanation.</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090702.webp"></p>
+<blockquote>
+<p>https:// {64659, 123310, 75584, 8138, 38271}</p></blockquote>
+<p>The puzzle went viral online and achieved excellent advertising results.</p>
+<p>Someone quickly cracked it. These numbers are token IDs from OpenAI&rsquo;s tokenizer. Converting them to the corresponding words gives a URL: <a href="https://listenlabs.ai/puzzle">listenlabs.ai/puzzle</a>.</p>
+<ol start="2">
+<li>The animated film <a href="https://www.wsj.com/tech/ai/openai-backs-ai-made-animated-feature-film-389f70b0"><em>Critterz</em></a>, supported by OpenAI, is scheduled to premiere at the Cannes Film Festival in May next year.</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090909.webp"></p>
+<p>The film was heavily produced using AI tools. The story was conceived by an OpenAI employee and is about the adventures of a group of forest creatures after their village is attacked by strangers.</p>
+<p>The production team hired artists to draw sketches, which were then input into AI models (including GPT-5) to generate the visuals (below).</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090908.webp"></p>
+<p>This approach is low-cost and fast. <em>Critterz</em> is expected to cost $30 million and take 9 months to produce, both far less than traditional animated films.</p>
+<p>OpenAI hopes to use this film to demonstrate the potential of AI in animated film production.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090910.webp"></p>
+<ol start="3">
+<li>Two American computer scientists used physical materials (wood, paper, acrylic) to create <a href="https://erikdemaine.org/prints/QR/">3D QR codes</a>.</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090705.webp"></p>
+<p>The QR code above is made of plywood and has a physical, layered texture.</p>
+<p>Such QR codes can still be scanned and also serve as great decorations. I think this is worth promoting.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090706.webp"></p>
+<ol start="4">
+<li><a href="https://newatlas.com/transport/fortescue-wae-infinity-train-electric/">Electric train that doesn&rsquo;t need external power</a></li>
+</ol>
+<p>An Australian mining company is building an electric train that doesn&rsquo;t require (external) charging.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202506/bg2025062602.webp"></p>
+<p>Their mine is located on a hilltop, and the train, loaded with heavy ore, will travel all the way down the mountain.</p>
+<p>They envision that gravity will push the train downhill, and during this process, potential energy can be converted into electrical energy to charge the batteries.</p>
+<p>When the train returns to flat ground and heads up the mountain again, it is empty and has little weight, so it can use the electricity generated during the descent to power itself. Theoretically, it can run long-term without external power.</p>
+<h2 id="articles">Articles<a hidden class="anchor" aria-hidden="true" href="#articles">#</a></h2>
+<ol>
+<li><a href="https://www.teamten.com/lawrence/programming/use-singular-nouns-for-database-table-names.html">Use Singular Nouns for Database Table Names</a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090707.webp"></p>
+<p>This article explains why <code>user</code> is better than <code>users</code> for database table names.</p>
+<ol start="2">
+<li><a href="https://jdstaerk.substack.com/p/we-just-found-malicious-code-in-the">Anatomy of an NPM Supply Chain Attack</a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091104.webp"></p>
+<p>This week, several popular npm packages (including Chalk and strip-ansi) were injected with malicious code, which had a weekly download count of one billion. This article details the attack.</p>
+<ol start="3">
+<li><a href="https://www.xda-developers.com/markdown-notes-convert-documents-fast-pandoc-templates/">How to Convert Markdown Files into Beautiful Documents</a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090704.webp"></p>
+<p>This article introduces how to use Pandoc&rsquo;s template feature to convert Markdown files into beautiful documents with a single command.</p>
+<ol start="4">
+<li><a href="https://kube.io/blog/liquid-glass-css-svg/">Simulating Liquid Glass with CSS and SVG</a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090912.webp"></p>
+<p>This article shows how to use only CSS and SVG files to simulate Apple&rsquo;s liquid glass effect. You can check the effect showcase at the end, which is stunning (only works in Chrome browser).</p>
+<ol start="5">
+<li><a href="https://theodoruszq.wordpress.com/2025/09/06/%e7%8b%ac%e7%ab%8b%e6%95%b0%e5%ad%97%e9%9f%b3%e4%b9%90%e4%bd%9c%e8%80%85-independent-digital-musician/">Becoming an Independent Digital Musician</a> (Chinese)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090703.webp"></p>
+<p>The author, with no musical theory background, used AI to create their first piece of instrumental music and published it on QQ Music. (<a href="https://github.com/ruanyf/weekly/issues/7723">@theodoruszq</a> Contribution)</p>
+<ol start="6">
+<li><a href="https://densumesh.dev/blog/fair-queue/">How to Solve the Noisy Neighbor Problem in Queues</a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090711.webp"></p>
+<p>If one user submits a large number of tasks to a queue, it can affect all other users, which is called the &ldquo;noisy neighbor problem.&rdquo; This article introduces a solution.</p>
+<ol start="7">
+<li><a href="https://unchartedterritories.tomaspueyo.com/p/never-bet-against-america">The Geography of the United States</a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090708.webp"></p>
+<p>This article thoroughly explains why the geographic location of the United States is so superior, with natural conditions favorable for economic development and difficulty for foreign enemies to invade.</p>
+<h2 id="tools">Tools<a hidden class="anchor" aria-hidden="true" href="#tools">#</a></h2>
+<ol>
+<li><a href="https://nuclearplayer.com">nuclear</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090709.webp"></p>
+<p>A cross-platform desktop music player that can search, play, and download music from streaming platforms, free and ad-free.</p>
+<ol start="2">
+<li><a href="https://elevenlabs.io/voice-isolator">Voice Isolator</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202407/bg2024071108.webp"></p>
+<p>An online tool to extract clear speech from noisy audio.</p>
+<ol start="3">
+<li><a href="https://counterscale.dev/">Counterscale</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202407/bg2024071114.webp"></p>
+<p>A website traffic analytics tool based on Cloudflare Worker.</p>
+<ol start="4">
+<li><a href="https://malai.sh/hello-tcp/">Malai</a></li>
+</ol>
+<p>A command-line tool to share local TCP ports externally.</p>
+<ol start="5">
+<li><a href="https://github.com/dahlia/optique">Optique</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090701.webp"></p>
+<p>A JS module for validating command-line arguments. It uses a holistic validation approach, which is relatively novel. See the <a href="https://optique.dev/tutorial">documentation</a>.</p>
+<ol start="6">
+<li><a href="https://koreader.rocks/">koreader</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202404/bg2024041106.webp"></p>
+<p>A reader software specifically developed for e-ink devices.</p>
+<ol start="7">
+<li><a href="https://github.com/pocketbase/pocketbase">PocketBase</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090602.webp"></p>
+<p>A single-file general-purpose backend for websites, including a database, user management, web admin panel, RESTful API, etc. (<a href="https://github.com/ruanyf/weekly/issues/7710">@moreant</a> Contribution)</p>
+<ol start="8">
+<li><a href="https://github.com/AkiraBit/PicSharp">PicSharp</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090603.webp"></p>
+<p>An open-source desktop software for image file compression, cross-platform, written in Rust. (<a href="https://github.com/ruanyf/weekly/issues/7717">@AkiraBit</a> Contribution)</p>
+<ol start="9">
+<li><a href="https://github.com/xingxingc/stray_avatar">Stray Avatar Gallery (潦草头像馆)</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090902.webp"></p>
+<p>An open-source WeChat mini-program that generates random avatars. (<a href="https://github.com/ruanyf/weekly/issues/7728">@xingxingc</a> Contribution)</p>
+<ol start="10">
+<li><a href="https://github.com/Simon-He95/vue-markdown-render">vue-renderer-markdown</a></li>
+</ol>
+<p>A markdown rendering component for the Vue framework, designed for AI markdown streaming scenarios. (<a href="https://github.com/ruanyf/weekly/issues/7747">@Simon-He95</a> Contribution)</p>
+<h2 id="ai-related">AI Related<a hidden class="anchor" aria-hidden="true" href="#ai-related">#</a></h2>
+<ol>
+<li><a href="https://github.com/ihmily/metatoolkit">MetaToolkit</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090901.webp"></p>
+<p>A Python library to add metadata to files, mainly to identify AI-generated content, in line with the newly issued <em>Measures for the Identification of Artificially Generated Synthetic Content</em>. (<a href="https://github.com/ruanyf/weekly/issues/7727">@ihmily</a> Contribution)</p>
+<ol start="2">
+<li><a href="https://lazytyper.com/zh">LazyTyper</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090903.webp"></p>
+<p>A free AI voice input method supporting Mac and Windows, with 5 free speech recognition engines to choose from. (<a href="https://github.com/ruanyf/weekly/issues/7730">@oldcai</a> Contribution)</p>
+<ol start="3">
+<li><a href="https://github.com/xpzouying/xiaohongshu-mcp">Xiaohongshu MCP (小红书 MCP)</a></li>
+</ol>
+<p>An MCP server written by a netizen, which allows AI to post on Xiaohongshu (Little Red Book), get recommendation lists, and search for content. (<a href="https://github.com/ruanyf/weekly/issues/7719">@xpzouying</a> Contribution)</p>
+<ol start="4">
+<li><a href="https://skyzh.github.io/tiny-llm/">How to Build Your Own Tiny LLM</a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091101.webp"></p>
+<p>An open-source e-book introducing the basics of large language models and teaching you how to build a tiny LLM (using the Qwen model as an example).</p>
+<h2 id="resources">Resources<a hidden class="anchor" aria-hidden="true" href="#resources">#</a></h2>
+<ol>
+<li><a href="https://kottke.org/25/09/the-official-map-of-the-star-wars-galaxy">Official Star Wars Map</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090604.webp"></p>
+<p>Lucasfilm officially released the <em>Official Map of the Star Wars Galaxy</em> on its website, marking the locations of all planets that have appeared in the movies.</p>
+<ol start="2">
+<li><a href="https://www.cssbed.com/">CSS Bed</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091103.webp"></p>
+<p>A CSS framework showcase website (similar to <a href="https://csszengarden.com/">CSS Zen Garden</a>) that collects various classless CSS frameworks.</p>
+<ol start="3">
+<li><a href="https://fingerprint.goldenowl.ai/">Browser Fingerprint Detector</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091105.webp"></p>
+<p>This website shows you how much personal information is leaked when you visit a webpage. This information can generate your browser fingerprint, which can be used to track you.</p>
+<h2 id="images">Images<a hidden class="anchor" aria-hidden="true" href="#images">#</a></h2>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Anscombe%27s_quartet">Anscombe&rsquo;s Quartet</a></li>
+</ol>
+<p>In 1973, British statistician Francis Anscombe presented four data scatter plots.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090913.webp"></p>
+<p>The distributions of these four datasets are completely different, yet their mean, variance, correlation coefficient, and linear regression are all identical.</p>
+<p>Anscombe used these four plots to prove that one must not only look at statistical metrics but also focus on scatter plots and outliers.</p>
+<ol start="2">
+<li><a href="https://www.thisiscolossal.com/2025/09/sluda-builds-minecraft-kowloon-walled-city/">Minecraft Kowloon Walled City</a></li>
+</ol>
+<p>Kowloon Walled City in Hong Kong, demolished in the 1990s, was perhaps the most densely populated place in history. Tens of thousands of people lived in an area the size of four football fields.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090904.webp"></p>
+<p>A foreign architect rebuilt Kowloon Walled City in the Minecraft game.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090905.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090906.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090907.webp"></p>
+<h2 id="excerpt">Excerpt<a hidden class="anchor" aria-hidden="true" href="#excerpt">#</a></h2>
+<ol>
+<li><a href="https://programmingsimplicity.substack.com/p/type-checking-is-a-symptom-not-a">Type Checking Is a Symptom, Not a Solution</a></li>
+</ol>
+<p>Over the past few decades, a major consensus in the software industry has been that type systems are extremely useful and crucial.</p>
+<p>It is believed that type systems can find errors during the compilation phase, leading to the development of increasingly powerful type systems.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090601.webp"></p>
+<p>I don&rsquo;t think so. I believe that the type system is not the fundamental solution to complexity; instead, it creates unnecessary complexity.</p>
+<p><strong>It is possible to build reliable, large, and complex systems without using a type system.</strong></p>
+<p>As an example, consider complex hardware systems. Electrical engineers frequently build systems with millions of components and complex interactions. How do they ensure reliability?</p>
+<p>They primarily rely on architectural principles: <strong>modularity, explicit interfaces, and strict invocation order.</strong></p>
+<p>If you have a good architectural design, the type system is actually not necessary. Here are two examples.</p>
+<p>(1) UNIX pipes can combine dozens of programs into complex workflows without type checking because each component adheres to a convention: what happens internally is not exposed outside the component, and external communication occurs only through explicit, simple text data.</p>
+<p>(2) The internet itself does not have centralized type checking. HTTP servers, clients, email systems, and DNS resolvers interoperate through simple protocols, following the architectural principles of loosely coupled components and concise interfaces.</p>
+<p>In summary, when components are truly isolated and communicate through simple, well-defined interfaces, even large systems remain understandable.</p>
+<p>The future of programming lies not in better analyzing complex systems but in better building simple systems.</p>
+<h2 id="quotes">Quotes<a hidden class="anchor" aria-hidden="true" href="#quotes">#</a></h2>
+<ol>
+<li></li>
+</ol>
+<p>OpenAI recently planned to open an online academy to teach AI knowledge and help users find new jobs. Ironically, the first company to join the program was Walmart.</p>
+<p>&ndash; <a href="https://www.theregister.com/2025/09/05/openai_jobs_board/"><em>OpenAI ate the jobs, now it offers to help you get a job at Walmart</em></a></p>
+<ol start="2">
+<li></li>
+</ol>
+<p>If the US wants to emulate China, it should start with China&rsquo;s strengths, such as actually learning math in school.</p>
+<p>&ndash; <a href="https://news.ycombinator.com/item?id=45151719">Hacker News user</a></p>
+<ol start="3">
+<li></li>
+</ol>
+<p>Suppose a large model is asked for someone&rsquo;s birthday, but it doesn&rsquo;t know. If it guesses &ldquo;September 10th,&rdquo; it has a 1/365 chance of being correct. If it answers &ldquo;I don&rsquo;t know,&rdquo; the probability of being correct is zero.</p>
+<p>&ndash; <a href="https://openai.com/index/why-language-models-hallucinate/"><em>Why language models hallucinate</em></a></p>
+<ol start="4">
+<li></li>
+</ol>
+<p>A recent fantasy novel published in the UK is about Cambridge graduate students going to hell to save their advisor&rsquo;s soul so the advisor can write them a recommendation letter.</p>
+<p>Anyone who has been a graduate student can understand that this story is not a joke.</p>
+<p>&ndash; <a href="https://www.publicbooks.org/dark-academia-grows-up/">PublicBooks.org</a></p>
+<ol start="5">
+<li></li>
+</ol>
+<p>I recently joined an AI company and found that a colleague hadn&rsquo;t looked at actual code for weeks. He only wrote design documents in simple English and handed them over to AI for implementation. When something needed fixing, he edited the document, not the code.</p>
+<p>This made me deeply realize: we are experiencing the end of the era where humans manually translate ideas into code.</p>
+<p>&ndash; <a href="https://www.xipu.li/posts/the-last-programmers"><em>The Last Programmers</em></a></p>
+<h2 id="past-issues-review">Past Issues Review<a hidden class="anchor" aria-hidden="true" href="#past-issues-review">#</a></h2>
+<p><a href="https://www.ruanyifeng.com/blog/2024/09/weekly-issue-318.html">Memories of an Entrepreneurial Coffee Shop</a> (#318)</p>
+<p><a href="https://www.ruanyifeng.com/blog/2023/08/weekly-issue-268.html">Productivity is a word for machines, not for people</a> (#268)</p>
+<p><a href="https://www.ruanyifeng.com/blog/2022/08/weekly-issue-218.html">Where are the opportunities in Artificial Intelligence?</a> (#218)</p>
+<p><a href="https://www.ruanyifeng.com/blog/2021/07/weekly-issue-168.html">The Game <em>Detroit: Become Human</em></a> (#168)</p>
+<hr>
+<h1 id="technology-enthusiast-weekly-issue-366-san-franciscos-crazy-ai-ads">Technology Enthusiast Weekly (Issue 366): San Francisco&rsquo;s Crazy AI Ads<a hidden class="anchor" aria-hidden="true" href="#technology-enthusiast-weekly-issue-366-san-franciscos-crazy-ai-ads">#</a></h1>
+<p>This is a weekly record of worthwhile technology content, published every Friday.</p>
+<p>This journal is <a href="https://github.com/ruanyf/weekly">open source</a>. Submissions are welcome on <a href="https://github.com/ruanyf/weekly/issues">GitHub Issues</a>. We also offer a <a href="https://github.com/ruanyf/weekly/issues/7674">&ldquo;Who&rsquo;s Hiring&rdquo;</a> service to post programmer recruitment information. For cooperation, please <a href="mailto:yifeng.ruan@gmail.com">contact via email</a> (<a href="mailto:yifeng.ruan@gmail.com">yifeng.ruan@gmail.com</a>).</p>
+<h2 id="cover-image-1">Cover Image<a hidden class="anchor" aria-hidden="true" href="#cover-image-1">#</a></h2>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091801.webp"></p>
+<p>On September 12, drones formed the pattern of a Finless Porpoise at the opening ceremony of the Yangtze River Culture and Art Season in Wuhan. (<a href="https://photo.cctv.com/2025/09/13/PHOA1r3Rs9Xo0zSv3TeTgdLk250913.shtml">via</a>)</p>
+<h2 id="san-franciscos-crazy-ai-ads">San Francisco&rsquo;s Crazy AI Ads<a hidden class="anchor" aria-hidden="true" href="#san-franciscos-crazy-ai-ads">#</a></h2>
+<p>In the last issue of the Weekly, I mentioned a billboard in San Francisco that contained a riddle pointing to an AI company&rsquo;s website.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025090702.webp"></p>
+<p>I initially thought this was an isolated incident, but this week I saw <a href="https://www.sfgate.com/tech/ai/bay-area-tech-scene-dorky-now-terrifying-21042943.php">a report</a> and realized I was wrong.</p>
+<p><strong>San Francisco has gone crazy for AI</strong>, with AI advertisements absolutely everywhere in the city. In comparison, China&rsquo;s AI fervor is quite quiet.</p>
+<p>San Francisco is geographically next to Silicon Valley, and most of the major US AI companies are located in this region. Stanford University is also nearby.</p>
+<p>Over the past two years, the AI concept has fueled the continuous surge of the US stock market, creating countless wealthy individuals. San Francisco is the epicenter of this frenzy, with capital and talent pouring in wildly.</p>
+<p>Standing on the street, every high-rise building has an AI billboard on top.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091709.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091710.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091711.webp"></p>
+<p>The first picture above shows a billboard that reads &ldquo;AI customer support even your mother will like.&rdquo; Is this a sign of running out of advertising slogans?</p>
+<p>Driving on the freeway, the roadside is also filled with AI ads.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091707.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091708.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091712.webp"></p>
+<p>Waiting at a bus stop, you see an AI ad that says &ldquo;Stop Hiring Humans.&rdquo;</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091713.webp"></p>
+<p>It&rsquo;s not just AI companies doing the advertising; companies unrelated to AI are also getting in on it.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091714.webp"></p>
+<p>Above is an advertisement for the company Postman, an API testing tool, which shouldn&rsquo;t inherently be related to AI.</p>
+<p>However, the ad reads &ldquo;Is your API ready for AI?&rdquo;, implying that you can use it for testing—this is how they ride the hot trend.</p>
+<p>These ubiquitous AI ads are not science fiction; they are the reality of San Francisco today.</p>
+<p>The reason for so many ads is partly because there are genuine business opportunities, but a larger reason is that AI companies have too much money. They have attracted a continuous stream of venture capital and can also raise money from the stock market. Capital desperately needs to see results.</p>
+<p>So, these companies frantically advertise. The more exposure they get, the higher their market share and company valuation become, which in turn attracts more capital.</p>
+<p>This is called a <strong>bubble economy</strong>. As long as it hasn&rsquo;t burst, you blow it as hard and big as you can, and you&rsquo;ll be rewarded.</p>
+<p>However, as an ordinary person, being constantly surrounded and bombarded by these ads is a bit absurd, isn&rsquo;t it? AI, as a new technology, is meant to improve work efficiency and liberate humanity, but now it has become like a religion, indoctrinating you and demanding your worship. People seem to have become its appendages, living in a world constructed by AI.</p>
+<h2 id="technology-trends-1">Technology Trends<a hidden class="anchor" aria-hidden="true" href="#technology-trends-1">#</a></h2>
+<ol>
+<li>The <a href="https://linuxiac.com/the-apache-software-foundation-unveils-new-oak-leaf-logo/">Apache Software Foundation</a> (ASF) is one of the world&rsquo;s largest open-source software organizations and recently changed its logo from a feather to an oak leaf-like design.</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091301.webp"></p>
+<p>The word &ldquo;apache&rdquo; originally refers to a Native American tribe, and the feather was a symbol of that tribe. Some criticized the symbol as a stereotype and inappropriate for modern use.</p>
+<p>So, the change was made to a leaf-like shape, which is more neutral and also metaphorically represents the resilience, openness, and responsibility of open-source software.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091302.webp"></p>
+<ol start="2">
+<li>Wind turbine blades are huge, making land transport very inconvenient.</li>
+</ol>
+<p>An American company decided to build a <a href="https://spectrum.ieee.org/wind-turbine-blade-transport-plane">plane specifically for transporting wind turbine blades</a>.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091704.webp"></p>
+<p>Its entire fuselage (including the nose) is used to hold the blades, and the cockpit has been moved to the top of the aircraft.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091705.webp"></p>
+<p>Loading and unloading the blades requires opening the entire rear cabin of the plane and sliding them in like toothpicks—it&rsquo;s quite spectacular.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091706.webp"></p>
+<ol start="3">
+<li>How tall can a sunflower grow?</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091602.webp"></p>
+<p>A farmer in Indiana, USA, cultivated the <a href="https://www.guinnessworldrecords.com/news/2025/9/tallest-sunflower-as-high-as-a-three-storey-house-topples-decade-old-record">world&rsquo;s tallest sunflower</a>, measuring 10.9 meters from the base to the tip of the flower.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091603.webp"></p>
+<p>One of the biggest challenges was that if the sunflower grows too tall, the stem cannot support the flower head, requiring the use of support frames. The farmer specifically built three tiers of scaffolding.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091604.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091605.webp"></p>
+<p>It&rsquo;s actually amazing that a small seedling can grow so large in just one year.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091606.webp"></p>
+<ol start="4">
+<li>True random numbers require hardware generation, which is not cheap.</li>
+</ol>
+<p>A foreign research team recently proved that <a href="https://discovery.kaust.edu.sa/en/article/25936/micro-leds-boost-random-number-generation/">Micro-LED beads</a> can be used as random number generators.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091702.webp"></p>
+<p>They found that the intensity fluctuation of the electromagnetic waves emitted by the LED (the number of photons per unit time) is random, and the random number generation rate is very high.</p>
+<p>Since LED beads are very cheap, if this discovery proves practical, the problem of random number generation might be solved.</p>
+<ol start="5">
+<li>Octopuses have 8 arms. <a href="https://www.discoverwildlife.com/animal-facts/marine-animals/octopus-arm-flexibility-helps-complex-behaviours">A study</a> found that the front four arms are used for exploration, and the back four are used for walking.</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091202.webp"></p>
+<p>This is somewhat similar to the division of labor between human upper and lower limbs and could be a reference for the design of multi-legged robots.</p>
+<h2 id="articles-1">Articles<a hidden class="anchor" aria-hidden="true" href="#articles-1">#</a></h2>
+<ol>
+<li><a href="https://www.xda-developers.com/high-end-cpu-is-overkill-now/">You May Not Need a High-End CPU</a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091609.webp"></p>
+<p>This article presents several reasons why buying an 8-core or higher-end CPU may be a waste for an average user.</p>
+<ol start="2">
+<li><a href="https://jvns.ca/blog/2025/06/10/how-to-compile-a-c-program/">How to Compile a C Program using the <code>make</code> Command</a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202506/bg2025062702.webp"></p>
+<p>A beginner&rsquo;s tutorial for C language, introducing how to use the <code>make</code> command to compile a program.</p>
+<ol start="3">
+<li><a href="https://eslint.org/blog/2024/10/code-review-nit-to-ecosystem-improvements/">Removing Redundant Truth Checks</a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202410/bg2024101610.webp"></p>
+<p>ESLint has a rule that flags an error if a conditional statement is always <code>true</code> or <code>false</code> because the check is redundant.</p>
+<p>TypeScript 5.6 has now also introduced this rule, which reports an error by default.</p>
+<ol start="4">
+<li><a href="https://css-tricks.com/the-most-hated-css-feature-cos-and-sin/">CSS <code>cos()</code> and <code>sin()</code></a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091703.webp"></p>
+<p>This article explains how to use CSS trigonometric functions to create circular layouts.</p>
+<ol start="5">
+<li><a href="https://evertpot.com/discovering-features-with-http-options/">The HTTP <code>Options</code> Method</a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202410/bg2024101701.webp"></p>
+<p>Besides the commonly used HTTP methods like GET and POST, there is a lesser-used method, OPTIONS. This article introduces its usage.</p>
+<ol start="6">
+<li><a href="https://www.xda-developers.com/reasons-embrace-virtual-machines-instead-dual-booting/">You Should Embrace Virtual Machines Instead of Dual-Booting</a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202504/bg2025040403.webp"></p>
+<p>This article argues that it is no longer necessary to install two operating systems and dual-boot; switching to virtual machines is entirely possible.</p>
+<ol start="7">
+<li><a href="https://threadreaderapp.com/thread/1413532678318612482.html">The Amazing Soviet Maps</a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091701.webp"></p>
+<p>The level of detail in Soviet maps is incredible. Their published foreign maps would mark the height of bridges above the water, their load-bearing capacity, and primary construction materials, as well as the width, flow direction, depth of rivers, and types of trees in forests, etc.</p>
+<p>It remains unclear how they obtained this information and why they included it in publicly published maps.</p>
+<h2 id="tools-1">Tools<a hidden class="anchor" aria-hidden="true" href="#tools-1">#</a></h2>
+<ol>
+<li><a href="https://github.com/eythaann/Seelen-UI">Seelen UI</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091303.webp"></p>
+<p>A Windows application that can make the Windows desktop resemble a Mac desktop, while also integrating workspaces and a tiling window manager. See the <a href="https://www.xda-developers.com/4-reasons-seelen-ui-makes-windows-feel-like-new-operating-system/">introduction article</a>.</p>
+<ol start="2">
+<li><a href="https://github.com/kubero-dev/ladder">Ladder</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202311/bg2023110703.webp"></p>
+<p>An open-source web scraping and viewing tool. Users input a URL, and it automatically scrapes and displays the webpage.</p>
+<ol start="3">
+<li><a href="https://github.com/plutov/oq">oq</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091201.webp"></p>
+<p>A terminal tool for viewing OpenAPI specification files.</p>
+<ol start="4">
+<li><a href="https://github.com/coder/httpjail">httpjail</a></li>
+</ol>
+<p>A cross-platform command-line program that can restrict local HTTP/HTTPs requests, requiring a whitelist for outgoing requests.</p>
+<ol start="5">
+<li><a href="https://github.com/highlight/highlight">highlight.io</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202311/bg2023110711.webp"></p>
+<p>An open-source error monitoring platform.</p>
+<ol start="6">
+<li><a href="https://github.com/CaoMeiYouRen/caomei-auth">CaoMei Auth (草梅 Auth)</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091402.webp"></p>
+<p>A login platform based on the Nuxt framework, supporting the OAuth2.0 protocol and multiple login methods such as email, username, mobile, verification code, and social media. (<a href="https://github.com/ruanyf/weekly/issues/7760">@CaoMeiYouRen</a> Contribution)</p>
+<ol start="7">
+<li><a href="https://neovide.dev/">Neovide</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202407/bg2024072509.webp"></p>
+<p>A cross-platform graphical interface wrapper for the Neovim editor, pre-configured with many features.</p>
+<ol start="8">
+<li><a href="https://github.com/Forceu/Gokapi">Gokapi</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202407/bg2024072602.webp"></p>
+<p>A self-hosted file sharing service where only administrators can upload.</p>
+<ol start="9">
+<li><a href="https://github.com/josephernest/Swap">Swap.js</a></li>
+</ol>
+<p>A very simple JS library that uses Ajax to give a normal multi-page website a &ldquo;partial update&rdquo; effect similar to a single-page application.</p>
+<h2 id="ai-related-1">AI Related<a hidden class="anchor" aria-hidden="true" href="#ai-related-1">#</a></h2>
+<ol>
+<li><a href="https://github.com/sshllm/sshai">SSHLLM</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091401.webp"></p>
+<p>An SSH-based AI client. You first log in to the server via SSH and then use it to access large AI models. (<a href="https://github.com/ruanyf/weekly/issues/7759">@aicu-icu</a> Contribution)</p>
+<ol start="2">
+<li><a href="https://pdftovideo.ai/">PDF to Video</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091501.webp"></p>
+<p>A free tool to convert PDF files into an explanatory video, complete with animations and voiceover. (<a href="https://github.com/ruanyf/weekly/issues/7764">@icaohongyuan</a> Contribution)</p>
+<ol start="3">
+<li><a href="https://github.com/emqx/mcp-typescript-sdk">TypeScript MCP-MQTT SDK</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091601.webp"></p>
+<p>This library allows connecting to an MCP server using the MQTT protocol, making it convenient for AI to directly operate IoT devices. (<a href="https://github.com/ruanyf/weekly/issues/7766">@ysfscream</a> Contribution)</p>
+<ol start="4">
+<li><a href="https://github.com/mendableai/open-lovable">Open Lovable</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202508/bg2025081107.webp"></p>
+<p>An open-source frontend application that generates website UI using natural language, similar to V0/Lovable.</p>
+<h2 id="resources-1">Resources<a hidden class="anchor" aria-hidden="true" href="#resources-1">#</a></h2>
+<ol>
+<li><a href="https://posthog.com/">PostHog</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091304.webp"></p>
+<p>This company&rsquo;s official website is designed like an operating system desktop. If left idle for a while, it even displays a screensaver.</p>
+<ol start="2">
+<li><a href="https://www.katalog-barbaraiweins.com/#images">Katalog</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202501/bg2025010205.webp"></p>
+<p>A photographer took a picture of every single one of her personal items (books, clothes, medicine, etc.) and put them on a website, totaling 12,795 photos.</p>
+<p>She wants to show people not to underestimate the quantity of possessions they own.</p>
+<ol start="3">
+<li><a href="https://ghislainfourny.github.io/big-data-textbook/">The Big Data Textbook</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202407/bg2024072404.webp"></p>
+<p>An English textbook on Big Data from ETH Zurich, available for free reading.</p>
+<h2 id="images-1">Images<a hidden class="anchor" aria-hidden="true" href="#images-1">#</a></h2>
+<ol>
+<li><a href="https://blog.jim-nielsen.com/2025/mac-app-flea-market/">ChatGPT Imposters</a></li>
+</ol>
+<p>ChatGPT is one of the most popular AI applications, and its logo is a rounded hexagon composed of six interlocking chains.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091607.webp"></p>
+<p>However, if you search for &ldquo;ChatGPT&rdquo; on Apple&rsquo;s App Store now, you will see countless imposters.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091608.webp"></p>
+<p>The image above shows the icons of various imposters. The real ChatGPT is somewhere among them.</p>
+<p>The names of the imposters also try to resemble ChatGPT, such as ChatBot, AI Bot, Open Chat AI, and so on.</p>
+<p>Can you find the genuine product among a pile of counterfeits?</p>
+<ol start="2">
+<li><a href="https://www.sfgate.com/bayarea/article/better-source-cheap-bay-area-office-furniture-19897542.php">San Francisco Office Furniture Graveyard</a></li>
+</ol>
+<p>San Francisco is the startup capital of the US, with countless venture capital-backed startups. Naturally, many companies also fail.</p>
+<p>This has spawned a business where people specialize in acquiring the office furniture of failed companies and reselling it at a discount.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202411/bg2024111407.webp"></p>
+<p>The acquired office furniture is piled up in large warehouses, and those who want it pick it out themselves.</p>
+<p>Many big Silicon Valley companies, such as Pinterest, Google, and Facebook, also sell their surplus office furniture here after laying off employees.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202411/bg2024111408.webp"></p>
+<p>This second-hand office furniture is often designer brands and is now sold at half the price, so the business is thriving.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202411/bg2024111409.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202411/bg2024111410.webp"></p>
+<p>Due to the US stock market&rsquo;s bull run in recent years, a record amount of venture capital has poured into startups, a large portion of which was spent on office furniture. As more companies fail, the supply of used office furniture is endless and cannot be fully acquired, suggesting good times ahead for the second-hand furniture business.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202411/bg2024111411.webp"></p>
+<h2 id="excerpt-1">Excerpt<a hidden class="anchor" aria-hidden="true" href="#excerpt-1">#</a></h2>
+<ol>
+<li><a href="https://www.facebook.com/groups/6257762630958818/permalink/10080550572013319/">Australia&rsquo;s Artificial Mediterranean Sea</a></li>
+</ol>
+<p>140 million years ago, the Australian interior was a closed inland sea. Later, the sea dried up, and it became a desolate, arid desert.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202508/bg2025083003.webp"></p>
+<p>Since the elevation of the interior is 15 meters lower than the coast, there have been historical proposals to refill the area with water and restore the inland &ldquo;Mediterranean Sea.&rdquo;</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202508/bg2025083004.webp"></p>
+<p>However, Australia does not have that much fresh water, and evaporation in the interior exceeds rainfall, so the plan was unfeasible.</p>
+<p>In the 21st century, with advancements in engineering capabilities, the plan has been resurrected, proposing the construction of a 600-kilometer pipeline to bring seawater inland.</p>
+<p>Solar panels (solar energy is extremely abundant in Australia) would be laid along the pipeline&rsquo;s route to generate electricity to power the pumps, continuously pumping water into the interior.</p>
+<p>In this scenario, once a lake is formed in the interior, rainfall would also increase, fundamentally changing the arid and water-scarce situation. Furthermore, a shipping industry could be established, and new coastal cities could be set up, boosting the economy and immigration potential.</p>
+<p>However, many people oppose the plan. Introducing seawater would completely salinize the inland soil, making it impossible to cultivate. Additionally, the construction cost of the water pipeline is enormous, preliminarily estimated to exceed 200 billion yuan.</p>
+<p>Australians are still weighing whether to pursue this crazy plan. In recent years, as global temperatures rise, the interior has become hotter and hotter, making it increasingly unsuitable for survival. Support for the idea is now rising, as spending hundreds of billions to create a sea is perhaps the only possible way to change the interior&rsquo;s climate.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202508/bg2025083005.webp"></p>
+<h2 id="quotes-1">Quotes<a hidden class="anchor" aria-hidden="true" href="#quotes-1">#</a></h2>
+<ol>
+<li></li>
+</ol>
+<p>With AI, code is no longer precious.</p>
+<p>&ndash; <a href="https://etsd.tech/posts/coders-end/">Boris Cherny</a>, Claude Code Product Lead</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>Museums today heavily use electronic screens, but I don&rsquo;t take my son to a museum to look at screens; otherwise, we could just use a tablet at home.</p>
+<p>&ndash; <a href="https://sethpurcell.com/writing/screens-in-museums/">US Netizen</a></p>
+<ol start="3">
+<li></li>
+</ol>
+<p>A career is like a pie-eating contest, and the prize for winning is that you have to eat more pie.</p>
+<p>Whether this is a good thing depends on whether you enjoy the work.</p>
+<p>&ndash; <a href="https://jason.energy/more-pie/">Jason Lengstorf</a>, American frontend engineer</p>
+<ol start="4">
+<li></li>
+</ol>
+<p>Many people, especially new engineers, mistakenly believe that using complex tools and languages leads to more powerful and innovative products.</p>
+<p>The opposite is true. The most effective components are simple, predictable, and boring, using mature technology. They provide the foundation we need to develop complex projects further.</p>
+<p>You are not building an interesting bridge; you are building a sturdy bridge that people will confidently walk on later.</p>
+<p>&ndash; <a href="https://dkarlovi.github.io/choose-boring/"><em>Choose Boring and Flexible Technology</em></a></p>
+<h2 id="past-issues-review-1">Past Issues Review<a hidden class="anchor" aria-hidden="true" href="#past-issues-review-1">#</a></h2>
+<p><a href="https://www.ruanyifeng.com/blog/2024/09/weekly-issue-319.html">How to Film a Viral Video</a> (#319)</p>
+<p><a href="https://www.ruanyifeng.com/blog/2023/09/weekly-issue-269.html">Why Heroes Don&rsquo;t Use Dynamite</a> (#269)</p>
+<p><a href="https://www.ruanyifeng.com/blog/2022/08/weekly-issue-219.html">How to Prevent Account Hacking</a> (#219)</p>
+<p><a href="https://www.ruanyifeng.com/blog/2021/07/weekly-issue-169.html">Wuling Motors Product Design</a> (#169)</p>
+<hr>
+<h1 id="technology-enthusiast-weekly-issue-367-several-marvelous-uses-of-nano-banana">Technology Enthusiast Weekly (Issue 367): Several Marvelous Uses of Nano Banana<a hidden class="anchor" aria-hidden="true" href="#technology-enthusiast-weekly-issue-367-several-marvelous-uses-of-nano-banana">#</a></h1>
+<p>This is a weekly record of worthwhile technology content, published every Friday. (<strong>[Notice] The Weekly will take a break during next week&rsquo;s National Day holiday.</strong>)</p>
+<p>This journal is <a href="https://github.com/ruanyf/weekly">open source</a>. Submissions are welcome on <a href="https://github.com/ruanyf/weekly/issues">GitHub Issues</a>. We also offer a <a href="https://github.com/ruanyf/weekly/issues/7674">&ldquo;Who&rsquo;s Hiring&rdquo;</a> service to post programmer recruitment information. For cooperation, please <a href="mailto:yifeng.ruan@gmail.com">contact via email</a> (<a href="mailto:yifeng.ruan@gmail.com">yifeng.ruan@gmail.com</a>).</p>
+<h2 id="cover-image-2">Cover Image<a hidden class="anchor" aria-hidden="true" href="#cover-image-2">#</a></h2>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092501.webp"></p>
+<p>Hong Kong is hosting the &ldquo;Victoria Harbour Sea Parade,&rdquo; where four large inflatable doll sculptures will be displayed along the Victoria Harbour waterfront. This is a photo of the inflatable dolls being transported. (<a href="https://ztylez.com/life/play/2025/09/23/331873/">via</a>)</p>
+<h2 id="several-marvelous-uses-of-nano-banana">Several Marvelous Uses of Nano Banana<a hidden class="anchor" aria-hidden="true" href="#several-marvelous-uses-of-nano-banana">#</a></h2>
+<p>Last month, Google released the image model Gemini 2.5 Flash Image (project name <a href="https://aistudio.google.com/models/gemini-2-5-flash-image">Nano Banana</a>).</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091305.webp"></p>
+<p>Google calls it the &ldquo;<strong>most advanced image generation and editing model</strong>&rdquo; currently available.</p>
+<p>After trying it out, I feel it is indeed very powerful and is free to use. You can access it directly by opening the <a href="https://aistudio.google.com/prompts/new_chat?model=gemini-2.5-flash-image-preview">official website</a> (image below).</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092111.webp"></p>
+<p>(Note: If you cannot access the official website, there are also <a href="https://github.com/search?q=repo%3Aruanyf%2Fweekly+nano+banana&amp;type=issues">third-party websites</a> in the Weekly discussion area that access the official API, but most require a fee.)</p>
+<p>Netizens have discovered various amazing uses for this model, and some have even compiled an <a href="https://github.com/PicoTrex/Awesome-Nano-Banana-images">Awesome repository</a>.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092113.webp"></p>
+<p>I have selected a few very practical examples from this repository to share with everyone. It should be noted that I believe other image models can also do these things, so feel free to try them out.</p>
+<h3 id="1-portrait-processing">(1) Portrait Processing<a hidden class="anchor" aria-hidden="true" href="#1-portrait-processing">#</a></h3>
+<p>The most common task for image models is certainly portrait processing. Let&rsquo;s start by uploading a casual photo.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091308.webp"></p>
+<p>Then, we ask the model to convert it into a passport photo with the following prompt:</p>
+<blockquote>
+<p>请为照片里面的人物生成1寸证件照，要求白底，职业正装，睁眼微笑。
+(Please generate a 1-inch ID photo for the person in the picture, with a white background, wearing professional formal attire, and smiling with eyes open.)</p></blockquote>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091309.webp"></p>
+<p>This effect is quite astonishing. It means that the person&rsquo;s expression, hairstyle, makeup, clothing, and posture can all be changed.</p>
+<p>Below is an example of changing the person&rsquo;s expression, having them smile while facing the camera slightly to the side.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091319.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091320.webp"></p>
+<p>Changing the person&rsquo;s posture: &ldquo;将下面第二张图片的人物，改成第一张图片的姿势。&rdquo; (Change the posture of the person in the second image below to the posture of the person in the first image.)</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091316.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091317.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091318.webp"></p>
+<p>Photo studios will be in danger going forward; portrait photos, travel photos, and group photos can all be entrusted to AI.</p>
+<h3 id="2-architectural-processing">(2) Architectural Processing<a hidden class="anchor" aria-hidden="true" href="#2-architectural-processing">#</a></h3>
+<p>Another use for image models is home decoration. If you want to see interior design renderings, you can have the AI generate them. Changing the decor colors and furniture is a small case.</p>
+<p>Here is a more challenging example: upload a floor plan and ask it to be turned into a 3D model rendering.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091310.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091311.webp"></p>
+<p>Extracting an architectural model from a photo is also quite magical.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091323.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091324.webp"></p>
+<h3 id="3-packaging-design">(3) Packaging Design<a hidden class="anchor" aria-hidden="true" href="#3-packaging-design">#</a></h3>
+<p>Next, let the model change the packaging of an item: &ldquo;将图二的漫画形象，贴到图一的包装盒，生成一张专业的产品照&rdquo; (Affix the cartoon image from image two onto the packaging box from image one to generate a professional product photo).</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091313.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091314.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091315.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092112.webp"></p>
+<p>Book covers and software boxes can be generated similarly.</p>
+<h3 id="4-map-processing">(4) Map Processing<a hidden class="anchor" aria-hidden="true" href="#4-map-processing">#</a></h3>
+<p>Another major market for image models is map applications (geographic information), though a monetizable concept has yet to be conceived. Below is an innovative use case.</p>
+<p>Upload a map with an arrow marking your selected location, and ask the model to &ldquo;生成沿着红色箭头看到的场景。&rdquo; (Generate the scene seen along the red arrow.)</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092114.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092115.webp"></p>
+<p>It can even generate a real-life image of the scene at the red arrow from a topographic contour map.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091326.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091327.webp"></p>
+<h2 id="technology-trends-2">Technology Trends<a hidden class="anchor" aria-hidden="true" href="#technology-trends-2">#</a></h2>
+<ol>
+<li><a href="https://seattleultrasonics.com/products/c-200-ultrasonic-8-chefs-knife">Supersonic Chef Knife</a></li>
+</ol>
+<p>An American company has launched a supersonic chef knife.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092107.webp"></p>
+<p>It has a button on the handle, and when pressed, the blade enters ultrasonic mode.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092108.webp"></p>
+<p>According to the description, when ultrasonic mode is activated, the blade vibrates more than 40,000 times per second, making the knife feel much sharper than it actually is and saving up to 50% of the effort required for cutting vegetables.</p>
+<p>In some cases, placing it on food allows the waves generated by the vibration to automatically slice the food.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092109.webp"></p>
+<p>The knife has a built-in battery, so it also comes with a matching knife charger.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092110.webp"></p>
+<ol start="2">
+<li><a href="https://feministhackerspaces.cargo.site/Clay-PCB-Tutorial">Clay PCB</a></li>
+</ol>
+<p>The circuit board (PCB) is the foundation of electronic products.</p>
+<p>A foreign netizen, aiming to demonstrate that circuit boards are not complex products, specifically created a circuit board out of clay.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091901.webp"></p>
+<p>He posted photos of the entire process online, starting with collecting mud and then flattening it.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091902.webp"></p>
+<p>He carved the circuit onto it and then fired it in a kiln.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091903.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091904.webp"></p>
+<p>Finally, after adding copper wires and electronic components, the circuit board was finished.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091905.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091906.webp"></p>
+<ol start="3">
+<li><a href="https://www.derekthompson.org/p/the-25-most-interesting-ideas-ive">IT Industry Employment</a></li>
+</ol>
+<p>According to the AI report by renowned analyst Mary Meeker, if AI-related positions are excluded from the IT industry, the number of IT jobs in the United States has been flat or declining for years.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092303.webp"></p>
+<p>In the image above, the blue line represents the total IT employment, the green line represents employment with AI positions removed, and the peak in the middle occurred during the pandemic.</p>
+<p>This means that while the IT industry itself continues to expand, all employment growth is happening in the AI sector.</p>
+<h2 id="articles-2">Articles<a hidden class="anchor" aria-hidden="true" href="#articles-2">#</a></h2>
+<ol>
+<li><a href="https://bughunters.google.com/blog/6715529872080896/beyond-sandbox-domains-rendering-untrusted-web-content-with-safecontentframe">Beyond Sandbox Domains: Rendering Untrusted Web Content with SafeContentFrame</a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092116.webp"></p>
+<p>How can third-party code be run securely on a webpage? Google proposes a brand-new solution called SafeContentFrame.</p>
+<p>It is a JS library that loads third-party code onto a separate domain, <code>googleusercontent.com</code>, and then inserts it into the current webpage using an iframe, thereby providing maximum isolation.</p>
+<ol start="2">
+<li><a href="https://marcobambini.substack.com/p/why-local-first-apps-havent-become">Why Local-First Apps Haven&rsquo;t Become Mainstream</a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092301.webp"></p>
+<p>The feature of offline use has not become popular. The author believes that offline use is equivalent to building a distributed system, which faces complex synchronization problems that are hard to get right.</p>
+<ol start="3">
+<li><a href="https://www.paradedb.com/blog/elasticsearch-was-never-a-database">Elasticsearch Was Never a Database</a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092007.webp"></p>
+<p>Elasticsearch is a mainstream search service. Can it be used as a primary database? This article explains why it cannot; it was not designed for that purpose.</p>
+<ol start="4">
+<li><a href="https://www.pavlinbg.com/posts/python-speech-to-text-guide">How to Generate a Transcript for Audio using Python</a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092302.webp"></p>
+<p>A simple introductory tutorial, guiding you step-by-step on how to write a Python script to extract a text transcript from audio using the Whisper model.</p>
+<ol start="5">
+<li><a href="https://evanhahn.com/ts-ignore-is-almost-always-the-worst-option/">Avoid Using <code>@ts-ignore</code></a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092406.webp"></p>
+<p>The TypeScript <code>@ts-ignore</code> annotation is used to suppress all errors on the next line. The author argues it should not be used, preferring <code>@ts-expect-error</code> or the <code>any</code> type instead.</p>
+<ol start="6">
+<li><a href="https://alastair.is/apple-has-a-private-css-property-to-add-liquid-glass-effects-to-web-content/">Apple Has a Private CSS Property to Add &ldquo;Liquid Glass&rdquo; Effects to Web Content</a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092010.webp"></p>
+<p>The author discovered that Apple added an undisclosed CSS property to the Safari browser, allowing webpage elements to display a &ldquo;liquid glass&rdquo; effect.</p>
+<ol start="7">
+<li><a href="https://www.xda-developers.com/systemd-tweaks-boost-boot-time/">How to Tweak systemd to Speed Up Boot Time</a> (English)</li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092403.webp"></p>
+<p>A beginner&rsquo;s tutorial teaching five tips to shorten boot time by adjusting systemd settings.</p>
+<h2 id="tools-2">Tools<a hidden class="anchor" aria-hidden="true" href="#tools-2">#</a></h2>
+<ol>
+<li><a href="https://github.com/kagehq/gpu-kill">gpu-kill</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092201.webp"></p>
+<p>A tool that displays GPU operational information, comes with a Web management panel, and supports various brands like Nvidia/AMD/Intel/Apple.</p>
+<p>There is also an online GPU performance testing website <a href="https://www.volumeshader.dev/">Volume Shader BM</a>. (<a href="https://github.com/ruanyf/weekly/issues/7804">@BOS1980</a> Contribution)</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092410.webp"></p>
+<ol start="2">
+<li><a href="https://github.com/domcyrus/rustnet">RustNet</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092011.webp"></p>
+<p>A cross-platform terminal tool for monitoring network traffic, displaying detailed connection information.</p>
+<ol start="3">
+<li><a href="https://github.com/crocofied/PortNote">PortNote</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202506/bg2025060114.webp"></p>
+<p>A self-hosted dashboard that lists local ports occupied by various services. When combined with a Compose file, it can start/stop Docker containers. See the <a href="https://www.xda-developers.com/reasons-why-portnote-port-of-call-on-every-server/">introduction article</a>.</p>
+<ol start="4">
+<li><a href="https://github.com/karam-ajaj/atlas">Atlas</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092407.webp"></p>
+<p>A Docker container that scans the current network and graphically displays network node information.</p>
+<ol start="5">
+<li><a href="https://github.com/MidnightCommander/mc">Midnight Commander</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202506/bg2025060107.webp"></p>
+<p>A terminal-based file manager supporting Linux and Mac.</p>
+<p>There is another similar terminal file manager called <a href="https://github.com/sxyazi/yazi">Yazi</a>.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092408.webp"></p>
+<ol start="6">
+<li><a href="https://github.com/openapphub/frpc-cli">frp-tunnel-cli</a></li>
+</ol>
+<p>A client-side helper Bash script for the inner-network penetration tool <a href="https://gofrp.org/zh-cn/docs/overview/">frp</a>, simplifying tunnel creation and management. (<a href="https://github.com/ruanyf/weekly/issues/7785">@openapphub</a> Contribution)</p>
+<ol start="7">
+<li><a href="https://github.com/hamsterbase/tasks">Hamsterbase Tasks</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092101.webp"></p>
+<p>An open-source task management software supporting Web, mobile, and desktop platforms, and can be deployed via Docker. (<a href="https://github.com/ruanyf/weekly/issues/7792">@CaryTrivett</a> Contribution)</p>
+<ol start="8">
+<li><a href="https://github.com/iKeepLearn/db-back-tool">db-back-tool</a></li>
+</ol>
+<p>A database backup tool for PostgreSQL/MySQL written by a netizen, which can automatically back up, encrypt, and compress the database, and upload the backup files to Tencent Cloud COS or Alibaba Cloud OSS. (<a href="https://github.com/ruanyf/weekly/issues/7798">@iKeepLearn</a> Contribution)</p>
+<ol start="9">
+<li><a href="https://github.com/x-cmd/x-cmd">X-CMD</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092412.webp"></p>
+<p>A command-line toolset that enables 1000+ CLI tools with one click, is cross-platform, and supports AI features. (<a href="https://github.com/ruanyf/weekly/issues/7806">@Zhengqbbb</a> Contribution)</p>
+<h2 id="ai-related-2">AI Related<a hidden class="anchor" aria-hidden="true" href="#ai-related-2">#</a></h2>
+<ol>
+<li><a href="https://www.huxe.com/">Huxe</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092404.webp"></p>
+<p>A personal voice companion that generates a podcast-like &ldquo;daily briefing&rdquo; for you to listen to, covering daily news, interests, personal calendar, and emails.</p>
+<p>It is a startup product from the core creators of NotebookLM after they left Google. It is currently free to use. See the <a href="https://www.xda-developers.com/huxe-app-official-launch/">introduction article</a>.</p>
+<ol start="2">
+<li><a href="https://github.com/AIPexStudio/AIPex">AIPex</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091908.webp"></p>
+<p>An open-source Chrome extension previously introduced in the Weekly, whose functionality has now been expanded to perform browser automation using AI. (<a href="https://github.com/ruanyf/weekly/issues/7783">@buttercannfly</a> Contribution)</p>
+<ol start="3">
+<li><a href="https://github.com/klemperer/binglish">binglish</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092401.webp"></p>
+<p>A Python script that automatically changes the Windows wallpaper to the Bing Daily Wallpaper and adds a &ldquo;Word of the Day&rdquo; to the wallpaper, with AI-generated word explanations and example sentences. (<a href="https://github.com/ruanyf/weekly/issues/7800">@klemperer</a> Contribution)</p>
+<ol start="4">
+<li><a href="https://github.com/asr-pub/index-tts-lora">index-tts-lora</a></li>
+</ol>
+<p>A fine-tuned model based on Bilibili&rsquo;s open-source Index-TTS voice synthesis model, which enhances the rhythm and naturalness of the voice. (<a href="https://github.com/ruanyf/weekly/issues/7789">@asr-pub</a> Contribution)</p>
+<ol start="5">
+<li><a href="https://github.com/neovateai/neovate-code">Neovate</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092411.webp"></p>
+<p>A terminal-based intelligent coding assistant (Code Agent) that can be considered an open-source Claude Code. (<a href="https://github.com/ruanyf/weekly/issues/7805">@xierenyuan</a> Contribution)</p>
+<ol start="6">
+<li><a href="https://github.com/x007xyz/flycut-caption">FlyCut Caption</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092402.webp"></p>
+<p>A web-based AI video subtitle editing tool that automatically converts video speech to text, generating subtitles. Try the <a href="https://caption.flycut.co/en/tool">Demo</a>. (<a href="https://github.com/ruanyf/weekly/issues/7801">@x007xyz</a> Contribution)</p>
+<ol start="7">
+<li><a href="https://github.com/whillhill/mcpstore">mcpstore</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092005.webp"></p>
+<p>A management tool for MCP services that connects to various MCP servers and includes a Web management panel. (<a href="https://github.com/ruanyf/weekly/issues/7790">@whillhill</a> Contribution)</p>
+<h2 id="resources-2">Resources<a hidden class="anchor" aria-hidden="true" href="#resources-2">#</a></h2>
+<ol>
+<li><a href="https://interactivetextbooks.tudelft.nl/showthephysics/Introduction/About.html">99 Physics Experiments</a></li>
+</ol>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092003.webp"></p>
+<p>an online English book featuring 99 small physics experiments from Dutch secondary schools, covering various fields (mechanics, light, magnetism, waves, etc.).</p>
+<ol start="2">
+<li><a href="https://github.com/bodadotsh/npm-security-best-practices">NPM Security Best Practices</a></li>
+</ol>
+<p>A series of npm package poisoning incidents have recently been exposed. This repository collects various npm security measures, divided into two main parts: for users and for publishers.</p>
+<h2 id="images-2">Images<a hidden class="anchor" aria-hidden="true" href="#images-2">#</a></h2>
+<ol>
+<li><strong>Principle of Electric Vehicles</strong></li>
+</ol>
+<p>An image circulating online that illustrates the principle of electric vehicles.</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025091907.webp"></p>
+<ol start="2">
+<li><a href="https://samjshah.com/2025/08/05/sangaku-puzzle-i-cant-solve/">A Geometry Problem</a></li>
+</ol>
+<p>There is a small circle inside a square. What is the relationship between the radius of the small circle and the side length of the square?</p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092001.webp"></p>
+<p><img loading="lazy" src="https://cdn.beekka.com/blogimg/asset/202509/bg2025092002.webp"></p>
+<p>This problem seems quite difficult. The answer is 4/33 of the square&rsquo;s side length.</p>
+<h2 id="excerpt-2">Excerpt<a hidden class="anchor" aria-hidden="true" href="#excerpt-2">#</a></h2>
+<ol>
+<li><a href="https://addyo.substack.com/p/the-70-problem-hard-truths-about">AI Coding Can Only Solve 70% of Problems</a></li>
+</ol>
+<p>Based on my observations, senior and junior programmers in a company use AI differently.</p>
+<p><strong>Senior programmers do not fully trust AI output; they merely use AI to accelerate projects.</strong> They generally review and refactor the code generated by AI and maintain a skeptical attitude towards AI&rsquo;s architectural decisions.</p>
+<p>Junior programmers are more inclined to skip review and refactoring, accepting AI&rsquo;s output wholesale, which leads to &ldquo;house of cards&rdquo; code: it looks like it works, but it collapses once put into production.</p>
+<p>I don&rsquo;t know if AI will replace programmers in the future, but currently, AI coding cannot solve 100% of software problems, but it can already solve 70%. This means that <strong>AI can reduce a senior programmer&rsquo;s workload by 70%.</strong></p>
+<p>The remaining 30% still requires a programmer&rsquo;s experience and expertise, and <strong>it is precisely this 30% that junior programmers lack.</strong></p>
+<p>Therefore, it may sound counter-intuitive: AI is more helpful to senior programmers than to junior programmers and is more likely to yield productive results.</p>
+<p>Currently, AI is more like a very motivated junior programmer on a team who can write code quickly but requires constant supervision and correction. <strong>The more you know, the better you can guide it.</strong></p>
+<p>Thus, the correct use of AI is for senior programmers to use it to accelerate what they already know how to do, and for junior programmers to use it to learn what should be done.</p>
+<h2 id="quotes-2">Quotes<a hidden class="anchor" aria-hidden="true" href="#quotes-2">#</a></h2>
+<ol>
+<li></li>
+</ol>
+<p>AI will continue to expand until most of the sun&rsquo;s energy is used for computation.</p>
+<p>&ndash; <a href="https://t.wangbase.com/0ZKey">Elon Musk&rsquo;s Latest Interview</a></p>
+<ol start="2">
+<li></li>
+</ol>
+<p>I think Mars can be self-sufficient within 30 years. Every two years, the planets align, and you can leave for Mars. So, there are about 10 to 15 launch windows to Mars within 30 years.</p>
+<p>The tonnage of cargo shipped to Mars will increase exponentially with each departure, meaning we can make Mars self-sufficient within 30 years.</p>
+<p>&ndash; <a href="https://t.wangbase.com/0ZKey">Elon Musk&rsquo;s Latest Interview</a></p>
+<ol start="3">
+<li></li>
+</ol>
+<p>A new job called &ldquo;Vibe Coding cleanup&rdquo; is quietly emerging in the software industry, specifically to fix problems caused by &ldquo;vibe coding.&rdquo; This is the greatest irony of the AI era: humans are hired to clean up AI&rsquo;s mess.</p>
+<p>&ndash; <a href="https://donado.co/en/articles/2025-09-16-vibe-coding-cleanup-as-a-service/"><em>Vibe Coding cleanup as a Service</em></a></p>
+<ol start="4">
+<li></li>
+</ol>
+<p>An AI bubble is very possible, but for a company like Meta, the greater risk is hesitation.</p>
+<p>If we end up wasting hundreds of billions on AI, that would obviously be unfortunate, but I actually think the risk of missing out on AI is higher. For us, the risk is not being too aggressive, but not being aggressive enough.</p>
+<p>&ndash; <a href="https://finance.sina.cn/7x24/2025-09-19/detail-infqzkhk9726343.d.html">Mark Zuckerberg</a></p>
+<ol start="5">
+<li></li>
+</ol>
+<p>Today&rsquo;s computers are <em>responders</em>: you tell it to do something, and it does it. The next stage of computing is the <em>agent</em>. It&rsquo;s like a little person in a box who starts anticipating what you want. 它不是帮助你，而是引导你处理大量的信息，就像你在盒子里有一个小伙伴。(It doesn&rsquo;t just help you; it guides you through a large amount of information, like having a little partner in a box.)</p>
+<p>&ndash; <a href="https://simonwillison.net/2025/Sep/18/steve-jobs/">Steve Jobs</a>, 1984 interview</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Winson Wu</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

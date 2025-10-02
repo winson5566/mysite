@@ -1,0 +1,11 @@
+{{- $aiWeeklySection := .Site.GetPage "ai-weekly" -}}
+{{- $allIssues := sort $aiWeeklySection.Pages "Date" "desc" -}}
+{{- $latestIssue := index $allIssues 0 -}}
+
+{{- if $latestIssue -}}
+  {{- /* $content := $latestIssue.Content -}}
+  {{- $content | safeHTML -}} */ -}}
+  
+{{- else -}}
+  <p>No AI Weekly issues found.</p>
+{{- end -}}

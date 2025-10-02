@@ -3,3 +3,36 @@ languageCode = "en-us"
 title = "Winson Wu"
 theme = "PaperMod"
 
+[params]
+  author = "Winson Wu"
+  description = "Personal website of Winson Wu — AI News, AI Documentation, Resume, and RAGB Project."
+  showAuthor = true
+  # 设置mainSections为空数组，这样首页就不会显示任何文章
+  mainSections = []
+
+# Menus
+[menu]
+
+  [[menu.main]]
+    name = "AI Weekly"
+    url = "/ai-weekly/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Resume"
+    url = "/resume/"
+    weight = 2
+
+  [[menu.main]]
+    name = "RAGB"
+    url = "https://www.ragie.org/"
+    weight = 3
+
+[pagination]
+  pagerSize = 10  # 每页显示10篇文章
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
