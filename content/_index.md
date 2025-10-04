@@ -17,22 +17,12 @@ draft: false
 
 <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 12px; margin: 2rem 0; box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);">
 
-I'm a **Master's candidate in Artificial Intelligence** at the University of Canterbury with **10+ years of experience** in AI, machine learning, and large-scale software systems. My expertise spans **LLMs, Edge AI, and Computer Vision**.  
+- ⏳ **10+ years** in AI & large-scale software systems  
+- 🏢 Former **Architect & Senior AI Engineer** at Intellifusion (*Top 4 AI company in China*)  
+- 🎓 Currently pursuing a **Master of AI** at the *University of Canterbury*  
+- 🔍 Focus: **Enterprise AI products & solutions**    
+- 📍 Christchurch, New Zealand — open to **AI Engineer opportunities**  
 
-Currently, I focus on **designing and building enterprise AI products**, combining research with real-world applications to deliver scalable and impactful solutions.  
-
-Previously, I worked as a **Senior AI Engineer** at **Intellifusion** (Top 4 AI company in China), where I built enterprise AI platforms, large-scale retrieval systems, and contributed to **9 AI-related patents**.
-
-</div>
-
-
-<div style="text-align: center; background: #f7fafc; padding: 2rem; border-radius: 12px; margin: 2rem 0;">
-  <p style="margin: 0; font-size: 1.1rem; color: #4a5568;">Let's connect and discuss AI, technology, or potential collaborations!</p>
-  <div style="margin-top: 1rem;">
-    <a href="mailto:wensheng.wu@pg.canterbury.ac.nz" style="display: inline-block; background: #4299e1; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 500; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(66, 153, 225, 0.3);">
-      📧 Get in Touch
-    </a>
-  </div>
 </div>
 
 </div>  
