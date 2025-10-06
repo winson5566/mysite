@@ -24,9 +24,11 @@ theme = "PaperMod"
     weight = 2
 
   [[menu.main]]
-    name = "Smart Chat"
-    url = "https://www.ragb.org/"
+    name = "SmartChat"
+    url = "https://SmartChat.winsonwu.com/"
     weight = 3
+    # Use an icon for this menu item
+    params = { icon = "title-logo.svg", noExternalIcon = true }
 
 [pagination]
   pagerSize = 10  # 每页显示10篇文章
@@ -35,4 +37,3 @@ theme = "PaperMod"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-

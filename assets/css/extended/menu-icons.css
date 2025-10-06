@@ -1,0 +1,17 @@
+/* Center-align menu items and icons */
+#menu a {
+  display: inline-flex;
+  align-items: center;
+}
+
+#menu a span {
+  display: inline-flex;
+  align-items: center;
+}
+
+#menu a span .menu-icon {
+  height: 20px;
+  width: auto;
+  display: block;
+  transform: translateY(5px);
+}
