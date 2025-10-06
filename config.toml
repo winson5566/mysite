@@ -10,6 +10,10 @@ theme = "PaperMod"
   # 设置mainSections为空数组，这样首页就不会显示任何文章
   mainSections = []
 
+[params.footer]
+  # 留空以隐藏“Powered by Hugo & PaperMod”
+  text = ""
+
 # Menus
 [menu]
 
